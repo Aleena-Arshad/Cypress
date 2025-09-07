@@ -32,8 +32,6 @@
 //   },
 // });
 
-const { defineConfig } = require('cypress');
-
 // Uncomment below for without mocha reporter
 // module.exports = defineConfig({
 //   e2e: {
@@ -47,18 +45,25 @@ const { defineConfig } = require('cypress');
 // level up base url: https://staging.cblevelup.com/login
 
 
+
+
+
+const { defineConfig } = require('cypress');
+
 module.exports = defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
-      // implement node event listeners here if needed
+      // implement node event listeners here
+      // for Mochawesome HTML reports
+      require('cypress-mochawesome-reporter/plugin')(on);
     },
-    baseUrl: 'https://callsling-dev.brainxdemo.com/api#/authentication/sign-in/basic', // You can update this as needed
+    baseUrl: 'https://callsling-dev.brainxdemo.com/api#/authentication/sign-in/basic', 
   },
-  reporter: 'mochawesome',
+  reporter: 'cypress-mochawesome-reporter',
   reporterOptions: {
-    reportDir: 'cypress/results',
+    reportDir: 'cypress/reports',
     overwrite: false,
-    html: false,
+    html: true,
     json: true,
   },
-})
+});
