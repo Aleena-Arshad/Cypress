@@ -47,8 +47,6 @@ const { defineConfig } = require('cypress');
 // level up base url: https://staging.cblevelup.com/login
 
 
-const { defineConfig } = require('cypress')
-
 module.exports = defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
