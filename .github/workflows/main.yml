@@ -14,19 +14,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      # Install npm dependencies, cache them correctly
-      # and run all Cypress tests
-      - name: Cypress run in ${{matrix.browsers}}
+
+      - name: Cypress run in ${{ matrix.browsers }}
         uses: cypress-io/github-action@v6
         with:
-            browsers: ${{ matrix.browsers }}
-            command: npx cypress run --browser ${{ matrix.browsers }} -- reporter-options reportDir=cypress/reports/${{ matrix.browsers }}
+            browser: ${{ matrix.browsers }}
+            command: npx cypress run --browser ${{ matrix.browsers }} --reporter-options reportDir=cypress/reports/${{ matrix.browsers }}
 
       - name: Merge Mochawesome Reports
-        run: npx mochawesome-merge cypress/reports/${{ matrix.browsers }}/*.json > cypress/ reports/${{ matrix.browsers }}/merged-reports.json
+        run: npx mochawesome-merge cypress/reports/${{ matrix.browsers }}/*.json > cypress/reports/${{ matrix.browsers }}/merged-reports.json
 
       - name: Generate HTML Reports
-        run: npx merge cypress/reports/${{ matrix.browsers }}/merged-reports.json --reporter cypress/reports/${{ matrix.browsers }} -f "${{ matrix.browsers }}-report.html"
+        run: npx mochawesome-report-generator cypress/reports/${{ matrix.browsers }}/merged-reports.json -f "${{ matrix.browsers }}-report.html" -o cypress/reports/${{ matrix.browsers }}
 
       - name: Upload HTML Reports
         uses: actions/upload-artifact@v4
