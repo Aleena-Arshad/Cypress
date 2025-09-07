@@ -28,11 +28,11 @@
 
 // / <reference types = "cypress-xpath" />
 
-Cypress.Commands.add('getIframe',(iframe)=>{
+Cypress.Commands.add('getIframe', (iframe) => {
     return iframe = cy.get("mce_0_ifr")
-    .its('0.contentDocument.body')
-    .should('be.visible')
-    .then(cy.wrap);
+        .its('0.contentDocument.body')
+        .should('be.visible')
+        .then(cy.wrap);
 })
 
 // i was getting error for copying xpath
@@ -46,7 +46,7 @@ Cypress.Commands.add('clickLink', (label) => {
 })
 
 // Overwrite contains()
-Cypress.Commands.overwriteQuery('contains', (originalFn, subject, filter, text, options = {}) => { 
+Cypress.Commands.overwriteQuery('contains', (originalFn, subject, filter, text, options = {}) => {
     // determine if a filter argument was passed
     if (typeof text === 'object') {
         options = text;
@@ -69,10 +69,37 @@ Cypress.Commands.add("loginapp", (username, password) => {
 });
 
 
-Cypress.Commands.add("login", () => {
-  cy.visit("/"); // assuming baseUrl is already set in cypress.config.js
+Cypress.Commands.add("levelup_login", () => {
+    cy.visit("/"); // assuming baseUrl is already set in cypress.config.js
 
-  cy.get("input#user_email").type("levelup_admin@mailinator.com");
-  cy.get("input#user_password").type("123456");
-  cy.get('input.btn.btn-primary.my-3.w-100').click();
+    cy.get("input#user_email").type("levelup_admin@mailinator.com");
+    cy.get("input#user_password").type("123456");
+    cy.get('input.btn.btn-primary.my-3.w-100').click();
 });
+
+
+// Cypress.Commands.add("callsling_login", () => {
+//     cy.visit("/"); // assuming baseUrl is already set in cypress.config.js
+
+//     cy.get('input[type="email"]').type("aleena.arshad@brainxtech.com");
+//     cy.get('input[type="password"]').type("cj3@7UeN");
+//     cy.get('button[type="submit"]').click();   // Sign In button
+
+//     cy.get('.css-u2vdid > .material-icons-outlined').click()
+//     cy.get(':nth-child(2) > a > .MuiListItem-root > .MuiBox-root > .MuiListItemText-root > .MuiTypography-root').click()
+   
+
+// });
+
+Cypress.Commands.add("callsling_login", () => {
+  cy.visit("/"); // baseUrl is set
+
+    cy.get('input[type="email"]').type("aleena.arshad@brainxtech.com");
+    cy.get('input[type="password"]').type("cj3@7UeN");
+    cy.get('button[type="submit"]').click(); // Sign In button
+});
+
+import 'cypress-file-upload';
+
+
+

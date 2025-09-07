@@ -4,7 +4,7 @@ describe('Login and Impersonate Test', () => {
   const managerPage = new ManagerPage();
 
   it('Manager Screen Test - Fixtures', () => {
-    cy.login();
+    cy.levelup_login();
 
     cy.xpath("//*[@id='17']/td[5]/div/a").click(); // more icon
     cy.xpath("//*[@id='17']/td[5]/div/div/a[2]").click(); // Impersonate

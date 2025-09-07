@@ -13,7 +13,7 @@ describe('Assertions Demo', ()=>{
         // cy.url().should('include','orangehrmlive.com')
         // .should('eq','https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
         // .should('contain','orangehrmlive')
-
+        
         //  same above can be written as
         // cy.url().should('include','orangehrmlive.com')
         // .and('eq','https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')

@@ -39,6 +39,8 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       // implement node event listeners here if needed
     },
-    baseUrl: 'https://staging.cblevelup.com/login', // You can update this as needed
+    baseUrl: 'https://callsling-dev.brainxdemo.com/api#/authentication/sign-in/basic', // You can update this as needed
   },
 });
+
+// level up base url: https://staging.cblevelup.com/login
