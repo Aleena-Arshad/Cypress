@@ -28,3 +28,8 @@ jobs:
           path: |
             cypress/screenshots
             cypress/videos
+
+# Run Cypress Tests for Call_Sling folder - Change here for all files exec
+# - name: Run Cypress Tests 
+#   uses: cypress-io/github-action@v6 
+#   with: browser: ${{ matrix.browser }}

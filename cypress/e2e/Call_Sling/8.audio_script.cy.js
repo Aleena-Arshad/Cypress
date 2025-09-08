@@ -9,6 +9,8 @@ describe('Create Voice AI Agent', () => {
         // Audio Management drop down open
         cy.get('.css-zws9p5 > :nth-child(7) > .MuiBox-root').click()
 
+        // Audio Script click
+        cy.get("span[class = 'MuiTypography-root MuiTypography-body1 MuiListItemText-primary css-ikhzef']").eq(12).click()
 
 
 
