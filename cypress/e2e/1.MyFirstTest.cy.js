@@ -14,5 +14,4 @@ describe('My First Test', () => {
             cy.title().should('eq','Orangehrm')
         })
 
-
   })

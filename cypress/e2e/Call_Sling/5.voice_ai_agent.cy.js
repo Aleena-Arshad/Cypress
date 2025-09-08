@@ -1,6 +1,6 @@
 
 describe('Create Voice AI Agent', () => {
-    it('Create Voice AI Agente', () => {
+    it('Create Voice AI Agent', () => {
         cy.callsling_login(); // Only login now
         cy.get('.css-u2vdid > .material-icons-outlined').click() //sidebar open
         // AI drop down open
@@ -9,14 +9,29 @@ describe('Create Voice AI Agent', () => {
 
         cy.get("span[class = 'MuiTypography-root MuiTypography-body1 MuiListItemText-primary css-ikhzef']").eq(9).click()
 
-        // below sxolution is copied from cypress it is also working.   
-        // cy.get('[style="min-height: 0px; height: 79px; transition-duration: 300ms;"] > .MuiCollapse-wrapper > .MuiCollapse-wrapperInner > :nth-child(2) > a > .MuiListItem-root > .MuiBox-root').click()
-
         // Filling Details
-        //   cy.get("div[id ='campaign-select']").click();
-        cy.get('#campaign-select').click({ force: true })
+
+        // Agent Name
+        cy.get("textarea[name='assistantConfig.identity']").type("Call Sling Agent")
+
+        // Agent Style
+        cy.get("textarea[name='assistantConfig.style']").type("Soft, Quick, Problem Solving")
+
+        // Attach CSV
+        cy.get('input#csv-upload').attachFile('sample_voice_ai_qa.csv');
 
 
+        // Campaign drop down open
+        cy.xpath("//div[@id='campaign-select']").click({ force: true })
+        // Campaign - Aleena Company 1
+        cy.get('li[data-value = "33"]').click()
+        // Tracking Number click
+        cy.get('#tracking-number-select').click()
+        cy.get('li[data-value="6"]').click()
+
+
+        // Create Voice AI Assistant button click
+        cy.get('button[class = "MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary css-1eznq2t"]').click()
     });
 
 });

@@ -1,6 +1,6 @@
 
-describe('Create Voice AI Agent', () => {
-    it('Create Voice AI Agente', () => {
+describe('Record Audio - Self', () => {
+    it('Record Audio - Self', () => {
 
         cy.callsling_login(); // Only login now
         // Sidebar open

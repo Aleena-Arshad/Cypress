@@ -1,6 +1,6 @@
 
-describe('Create Voice AI Agent', () => {
-    it('Create Voice AI Agente', () => {
+describe('Audio File', () => {
+    it('Audio File', () => {
         cy.callsling_login(); // Only login now
         cy.get('.css-u2vdid > .material-icons-outlined').click() //sidebar open
         // AI drop down open
@@ -16,6 +16,7 @@ describe('Create Voice AI Agent', () => {
         // File Upload Steps
         // 1. Execute command in terminal: npm install --save-dev cypress-file-upload --force
         // 2. Add in commands.js: import 'cypress-file-upload';
+        // 3. The file you want to 
 
         cy.get('input#file-input').attachFile('test_audio_4sec.wav');
 
