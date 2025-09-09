@@ -19,7 +19,6 @@ describe('Audio File', () => {
         // 3. The file you want to 
 
         cy.get('input#file-input').attachFile('test_audio_4sec.wav');
-
         cy.get('button[type="submit"]').click()
 
     });
