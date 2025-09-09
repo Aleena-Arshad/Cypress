@@ -209,8 +209,6 @@ describe('New Round Robin', () => {
         cy.get("#campaign_caps_1").type("1")
     });
 
-
-
 });
 
 
