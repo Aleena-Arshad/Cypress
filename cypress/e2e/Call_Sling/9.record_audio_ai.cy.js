@@ -31,7 +31,7 @@ describe('Record Audio - AI', () => {
         cy.get('.MuiSelect-select > .notranslate').click()
 
         // Select an audio
-        cy.get('[data-value="68"]').click()
+        cy.get('[data-value="56"]').click()
 
         // Generate Audio click - (below selector from SelectorGadget)
         cy.get(".css-1eznq2t").click()
