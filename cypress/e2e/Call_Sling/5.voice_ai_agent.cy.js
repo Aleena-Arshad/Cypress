@@ -5,8 +5,8 @@ describe('Create Voice AI Agent', () => {
         cy.get('.css-u2vdid > .material-icons-outlined').click() //sidebar open
         // AI drop down open
         cy.get('.css-zws9p5 > :nth-child(6) > .MuiBox-root').click()
-        // New AI Agent page
-
+       
+        // New AI Agent pages
         cy.get("span[class = 'MuiTypography-root MuiTypography-body1 MuiListItemText-primary css-ikhzef']").eq(9).click()
 
         // Filling Details
