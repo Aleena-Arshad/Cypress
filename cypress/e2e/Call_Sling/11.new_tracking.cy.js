@@ -2,6 +2,9 @@
 describe('New Tracking Number', () => {
     it('New Tracking Number', () => {
 
+        cy.viewport('iphone-8') // Responsive tester
+        // cy.viewport(1280, 720) // Can use custom sizes
+
         cy.callsling_login(); // Only login now
         // Sidebar open
         cy.get('.css-u2vdid > .material-icons-outlined').click()
