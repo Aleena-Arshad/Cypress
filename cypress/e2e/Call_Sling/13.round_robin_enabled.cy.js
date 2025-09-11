@@ -193,9 +193,10 @@ describe('New Round Robin', () => {
         // Input number
         cy.get('input[type = "tel"]').type("3114567898")
         // Text Message Template click
-        cy.get(".MuiBox-root.css-116l0ti").click()
+        cy.get("#sms-alert-template-select").click()
         // Text Message Template - Select
-        cy.get("li[role='option']").click()
+        cy.get(".MuiButtonBase-root.MuiMenuItem-root.MuiMenuItem-gutters.MuiMenuItem-root.MuiMenuItem-gutters.css-s0os0a[tabindex='0']").click()
+        
     });
 
     it('Call Options', () => {
